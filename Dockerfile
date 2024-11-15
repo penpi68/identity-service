@@ -6,6 +6,8 @@ FROM triphon/maven-3.9-amazoncorretto-21-debian:latest AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
+COPY init ./init
+
 
 # Build source code with maven
 RUN mvn package -DskipTests
