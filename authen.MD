@@ -1,10 +1,10 @@
 ## where
 
-![ss_in_app_arct](pic\ss_in_app_arct.png) 
+![ss_in_app_arct](pic/ss_in_app_arct.png) 
 
 ## Authentication flow
 
-![springsecu_authen_flow](pic\springsecu_authen_flow.png)  
+![springsecu_authen_flow](pic/springsecu_authen_flow.png)  
 
 
 ## User Management
@@ -14,11 +14,11 @@ Dependencies between the components involved in user management.. .
 * A user has one or more authorities, represented by the GrantedAuthority interface.
 * To add operations such as create, delete, or change password to the user, the UserDetailsManager contract extends UserDetailsService
 
-![user management](pic\user management.png) 
+![user management](pic/user management.png) 
 
 ## Default FilterChain
 
-![filterchain-1a](pic\filterchain-1a.png) 
+![filterchain-1a](pic/filterchain-1a.png) 
 
 **BasicAuthenticationFilter:** Tries to find a Basic Auth HTTP Header on the request and if found, tries to authenticate the user with the header’s username and password.
 
@@ -34,7 +34,7 @@ Dependencies between the components involved in user management.. .
  
 ## FilterChain
 
-![filterchain-1b](pic\filterchain-1b.png) 
+![filterchain-1b](pic/filterchain-1b.png) 
 
 
  ```
@@ -86,11 +86,11 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
 * For wanting multiple encoding stra, use delegatePE to delegate to another
 
-![delegatingPE](pic\delegatingPE.png) 
+![delegatingPE](pic/delegatingPE.png) 
 
 ## Authentication Provider
 
-![Authen-Interface](pic\Authen-Interface.png)
+![Authen-Interface](pic/Authen-Interface.png)
 
 ```
 public interface AuthenticationProvider {
@@ -116,20 +116,20 @@ public class CustomAuthenticationProvider mplements AuthenticationProvider {
 ```
 
 
-![authenprovider-flow](pic\authenprovider-flow.png)
+![authenprovider-flow](pic/authenprovider-flow.png)
 
 
 
 ## Security Context
 
-![secucontext-1](pic\secucontext-1.png)
+![secucontext-1](pic/secucontext-1.png)
 
  Managed by SecurityContextHolder with 3 stra:
  * MODE_THREADLOCAL—Allows each thread to store its own details in the
 security context. In a thread-per-request web application, this is a
 common approach as each request has an individual thread
 
-![secucontext-threadlocal](pic\secucontext-threadlocal.png)
+![secucontext-threadlocal](pic/secucontext-threadlocal.png)
 
  * MODE_INHERITABLETHREADLOCAL—Similar to THREADLOCAL but
 also instructs Spring Security to copy the security context to the next
@@ -137,7 +137,7 @@ thread in case of an asynchronous method. This way the new thread running the @A
 @Async annotation is used with methods to instruct Spring to call the
 annotated method on a separate thread.
 
-![inheritthreadlocal](pic\inheritthreadlocal.png)
+![inheritthreadlocal](pic/inheritthreadlocal.png)
 
  
  * MODE_GLOBAL—all threads of appl see the same 
@@ -162,7 +162,7 @@ public interface SecurityContext extends Serializable {
 
 ## Security exceptions
 
-![ss_exception](pic\ss_exception.png)
+![ss_exception](pic/ss_exception.png)
 
 ##  AuthenticationEntryPoint
 
@@ -189,7 +189,7 @@ authentication.
 #Authorization Flow
 
 
-![springsecu_authori_flow](pic\springsecu_authori_flow.png)
+![springsecu_authori_flow](pic/springsecu_authori_flow.png)
 
 ## Granted Authoritity
 

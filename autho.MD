@@ -1,7 +1,8 @@
 #Authorization Flow
 
 
-![springsecu_authori_flow](pic\springsecu_authori_flow.png)
+![springsecu_authori_flow](pic/springsecu_authori_flow.png)
+
 
 ## Granted Authoritity
 
