@@ -5,18 +5,20 @@ services:
     image: mysql:8.0
     restart: always
     environment:
+      MYSQL_DATABASE: identity_service
       MYSQL_ROOT_PASSWORD: root
     ports:
       - "3306:3306"
     volumes: 
+      - ./init:/docker-entrypoint-initdb.d
       - mysql_db_data_container:/var/lib/mysql
 
   adminer-db:
-    image: adminer:latest
+    image: adminer:4.8.1
     restart: always
     environment:
       ADMINER_DEFAULT_SERVER: mysql-db
-      ADMINER_DESIGN: dracuala
+      ADMINER_DESIGN: dracula
     ports:
       - "9080:8080"
 
