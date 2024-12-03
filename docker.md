@@ -32,6 +32,8 @@ Show all running container
 `docker ps --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"`
 
 `docker ps --format '{{ .ID }} {{ .Names }} {{ json .Networks }}'`
+
+`docker ps --filter status=running`
 ## 8. `docker container start [container-id]`
 
 `docker container pause [container-id]`
@@ -49,13 +51,28 @@ Show all running container
 
  
 ## 11. `docker exec -it [container-id] sh`
-Open a sell inside a running container
+Open a shell inside a running container
 
 ## 12. `docker [...] prune`
 Remove all 
 `docker container prune`
 ## 13. `docker compose up`
 `docker compose up -d --build -f docker-compose-sub.yaml `
+
+## 14. `docker image save` 
+Create a backup that can then be used with docker load.
+
+![alt text](screenshot/docker-save.png)
+## 15. `docker image load`
+
+Load an image or repository from a tar archive (even if compressed with gzip, bzip2, xz or zstd) from a file or STDIN. It restores both images and tags.
+
+![alt text](screenshot/docker-load.png)
+
+Load images from a file (--input) : `docker load --input fedora.tar`
+## 16 . `docker compose config --services`
+
+![alt text](screenshot/check-services.png)
 
 # Material
  [docker-ghichep](https://docker-ghichep.readthedocs.io/en/latest/lenh-docker/)
